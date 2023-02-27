@@ -17,6 +17,40 @@ public class Ember {
         this(nev, kor, nem, 0);
     }
 
+    public String getNev() {
+        return nev;
+    }
+
+    public void setNev(String nev) {
+        this.nev = nev;
+    }
+
+    public int getKor() {
+        return kor;
+    }
+
+    public void setKor(int kor) {
+        this.kor = kor;
+    }
+
+    public int getMunkTöltÉv() {
+        return munkTöltÉv;
+    }
+
+    public void setMunkTöltÉv(int munkTöltÉv) {
+        this.munkTöltÉv = munkTöltÉv;
+    }
+
+    public char getNem() {
+        return nem;
+    }
+
+    public void setNem(char nem) {
+        this.nem = nem;
+    }
+    
+    
+
     @Override
     public String toString() {
         return "Ember{" + "nev=" + nev + ", kor=" + kor + ", munkT\u00f6lt\u00c9v=" + munkTöltÉv + ", nem=" + nem + '}';

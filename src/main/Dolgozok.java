@@ -11,7 +11,7 @@ import model.Ember;
 
 public class Dolgozok {
 
-    static List<Ember> emberek = new ArrayList<>();
+    
 
     public static void main(String[] args) throws IOException {
         String fileName = "emberek.txt";
@@ -22,6 +22,8 @@ public class Dolgozok {
         String fejlec = sorok.get(0);
         sorok.remove(0);
 
+        
+        List<Ember> emberek = new ArrayList<>();
         for (int i = 0; i < sorok.size(); i++) {
             String[] line = sorok.get(i).split(";");
             if (line.length == 4) {
@@ -31,11 +33,15 @@ public class Dolgozok {
             }
         }
 
-        for (int i = 0; i < emberek.size(); i++) {
-            System.out.println(emberek.get(i).toString());
-        }
+//        for (int i = 0; i < emberek.size(); i++) {
+//            System.out.println(emberek.get(i).toString());
+//        }
 
-        //new DolgozokGUI().setVisible(true);
+
+        DolgozokGUI gui =   new DolgozokGUI(emberek);
+        gui.setLocationRelativeTo(null);
+        gui.setVisible(true);
+      
     }
 
 }
