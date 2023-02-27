@@ -1,0 +1,8 @@
+Lányok:
+Legidősebb: 33 éves
+Összes kor: 77 év
+6 éve dolgozók: nincs
+Fiúk:
+Legidősebb: 35 éves
+Összes kor: 100 év
+6 éve dolgozók: nincs

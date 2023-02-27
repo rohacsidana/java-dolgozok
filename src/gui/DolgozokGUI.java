@@ -46,20 +46,22 @@ public class DolgozokGUI extends javax.swing.JFrame {
     public void fajlbaIras(char nem) throws IOException {
 
         File fileName = new File("ember-adatok.txt");
-        try (FileWriter fw = new FileWriter(fileName)) {
+        try ( FileWriter fw = new FileWriter(fileName)) {
             if (nem == 'L' || nem == 'M') {
                 fw.write("Lányok:" + "\n");
-                fw.write("Legidősebb: " + legidosebbEmber(lanyok).getKor() + " éves\n");
-                fw.write("Összes kor: " + osszKor(lanyok) + " év\n");
-                fw.write("6 éve dolgozók: " + hatEveIttDolgozokNevei(lanyok) + "\n");
+                adatokFajlba(fw, lanyok);
             }
             if (nem == 'F' || nem == 'M') {
                 fw.write("Fiúk:" + "\n");
-                fw.write("Legidősebb: " + legidosebbEmber(fiuk).getKor() + " éves\n");
-                fw.write("Összes kor: " + osszKor(fiuk) + " év\n");
-                fw.write("6 éve dolgozók: " + hatEveIttDolgozokNevei(fiuk) + "\n");
+                adatokFajlba(fw, fiuk);
             }
         }
+    }
+
+    public void adatokFajlba(FileWriter fw, List<Ember> emberek) throws IOException {
+        fw.write("Legidősebb: " + legidosebbEmber(emberek).getKor() + " éves\n");
+        fw.write("Összes kor: " + osszKor(emberek) + " év\n");
+        fw.write("6 éve dolgozók: " + hatEveIttDolgozokNevei(emberek) + "\n");
     }
 
     public void embertKeres(String nev) {
@@ -119,7 +121,7 @@ public class DolgozokGUI extends javax.swing.JFrame {
         } else {
             for (int i = 0; i < hatEveDolgozok.size(); i++) {
                 nevek += hatEveDolgozok.get(i);
-                if (!(hatEveDolgozok.get(i).equals(hatEveDolgozok.get(hatEveDolgozok.size()-1)))) {
+                if (!(hatEveDolgozok.get(i).equals(hatEveDolgozok.get(hatEveDolgozok.size() - 1)))) {
                     nevek += ", ";
 
                 }
