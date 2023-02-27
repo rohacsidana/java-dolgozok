@@ -11,8 +11,6 @@ import model.Ember;
 
 public class Dolgozok {
 
-    
-
     public static void main(String[] args) throws IOException {
         String fileName = "emberek.txt";
         Path path = Paths.get(fileName);
@@ -22,7 +20,6 @@ public class Dolgozok {
         String fejlec = sorok.get(0);
         sorok.remove(0);
 
-        
         List<Ember> emberek = new ArrayList<>();
         for (int i = 0; i < sorok.size(); i++) {
             String[] line = sorok.get(i).split(";");
@@ -33,15 +30,10 @@ public class Dolgozok {
             }
         }
 
-//        for (int i = 0; i < emberek.size(); i++) {
-//            System.out.println(emberek.get(i).toString());
-//        }
-
-
-        DolgozokGUI gui =   new DolgozokGUI(emberek);
+        DolgozokGUI gui = new DolgozokGUI(emberek);
         gui.setLocationRelativeTo(null);
         gui.setVisible(true);
-      
+
     }
 
 }
